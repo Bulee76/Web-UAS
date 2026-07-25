@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aditya Outdoor Gear - Form Transaksi</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="logo">
+      <h1>ADITYA OUTDOOR GEAR</h1>
+      <p><i>"Explore the Wild, Prepare Your Best Gear"</i></p>
+    </div>
+  </header>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">KATALOG PRODUK</a></li>
+      <li><a href="detail.html">DETAIL PRODUK</a></li>
+      <li><a href="transaksi.html" class="active">FORM TRANSAKSI</a></li>
+      <li><a href="tentang.html">TENTANG TOKO</a></li>
+      <li><a href="kontak.html">KONTAK & BIODATA</a></li>
+    </ul>
+  </nav>
+
+  <!-- CONTAINER -->
+  <div class="container">
+    
+    <!-- SIDEBAR -->
+ <div class="widget">
+  <h3>LOKASI TOKO</h3>
+  <!-- MAPS IFRAME -->
+  <div style="width: 100%; border-radius: 6px; overflow: hidden; margin-bottom: 10px; border: 1px solid #FFD700;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.026880016664!2d107.61280387499616!3d-6.887383993111622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e657375a0e35%3A0x6291a27e7f22f4b5!2sUniversitas%20Komputer%20Indonesia%20(UNIKOM)!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
+      width="100%" 
+      height="180" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+  <p style="font-size: 0.8rem; color: #ccc;">
+    <strong>Alamat Lengkap:</strong><br>
+    Jl. Dipati Ukur No. 112, Coblong, Kota Bandung (Area Depan Kampus UNIKOM)
+  </p>
+</div>
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+      <h2>Formulir Penyewaan Alat</h2>
+      
+      <div class="form-container" style="background-color: #1a1a1a; padding: 25px; border-radius: 8px; border: 1px solid #2a2a2a;">
+        <form id="rentForm" onsubmit="handleOrder(event)">
+          
+          <div style="margin-bottom: 15px;">
+            <label style="display:block; margin-bottom: 5px; color:#FFD700;">Nama Lengkap Penyewa:</label>
+            <input type="text" id="nama" required style="width:100%; padding:10px; border-radius:5px; border:1px solid #333; background:#262626; color:#fff;">
+          </div>
+
+          <div style="margin-bottom: 15px;">
+            <label style="display:block; margin-bottom: 5px; color:#FFD700;">Nomor WhatsApp:</label>
+            <input type="tel" id="hp" required placeholder="08xxxxxxxxxx" style="width:100%; padding:10px; border-radius:5px; border:1px solid #333; background:#262626; color:#fff;">
+          </div>
+
+          <div style="margin-bottom: 15px;">
+            <label style="display:block; margin-bottom: 5px; color:#FFD700;">Pilih Alat Outdoor:</label>
+            <select id="produk" onchange="hitungsTotal()" style="width:100%; padding:10px; border-radius:5px; border:1px solid #333; background:#262626; color:#fff;">
+              <option value="50000">Carrier Eiger 60L - Rp 50.000/hari</option>
+              <option value="65000">Tenda Consina 4P - Rp 65.000/hari</option>
+              <option value="40000">Sepatu Rei Tracker - Rp 40.000/hari</option>
+              <option value="15000">Sleeping Bag Polar - Rp 15.000/hari</option>
+              <option value="10000">Kompor Portable - Rp 10.000/hari</option>
+            </select>
+          </div>
+
+          <div style="margin-bottom: 15px;">
+            <label style="display:block; margin-bottom: 5px; color:#FFD700;">Durasi Sewa (Hari):</label>
+            <input type="number" id="durasi" value="1" min="1" oninput="hitungsTotal()" style="width:100%; padding:10px; border-radius:5px; border:1px solid #333; background:#262626; color:#fff;">
+          </div>
+
+          <!-- KOTAK TOTAL HARGA AUTOMATIS JS -->
+          <div style="background:#0f1f15; padding: 15px; border-radius: 5px; border: 1px solid #FFD700; margin-bottom: 20px; text-align: center;">
+            <span style="font-size:0.9rem;">Estimasi Total Biaya:</span>
+            <h3 id="totalHarga" style="color: #FFD700; font-size: 1.8rem; margin-top:5px;">Rp 50.000</h3>
+          </div>
+
+          <button type="submit" class="btn-detail" style="width:100%; padding: 12px; font-size: 1rem; border:none; cursor:pointer;">Kirim Pesanan (WhatsApp)</button>
+        </form>
+      </div>
+    </main>
+
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p><strong>Aditya Outdoor Gear © 2026 | NIM: 10525009</strong></p>
+    <p class="dosen">Dosen: Syahrul Mauluddin, S.Kom, M.Kom - UNIKOM</p>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
