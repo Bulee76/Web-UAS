@@ -1,30 +1,25 @@
-<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Aditya Outdoor Gear - Katalog Sewa</title>
-  <!-- Menghubungkan ke file CSS external -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <!-- HEADER -->
   <header class="header">
     <div class="logo">
       <h1>ADITYA OUTDOOR GEAR</h1>
       <p><i>"Explore the Wild, Prepare Your Best Gear"</i></p>
     </div>
   </header>
-  
-  <!-- MARQUEE (TEKS BERJALAN) -->
+
 <div style="background-color: #0b140e; color: #FFD700; padding: 5px 0; border-bottom: 1px solid #1b3322;">
   <marquee behavior="scroll" direction="left" scrollamount="6" style="font-size: 0.85rem; font-weight: bold;">
     📢 PROMO UAS: Diskon sewa paket camping 10% untuk mahasiswa UNIKOM! | Buka Setiap Hari: 08.00 - 22.00 WIB | Lokasi: Jl. Dipati Ukur No. 112 Bandung
   </marquee>
 </div>
 
-  <!-- NAVBAR -->
   <nav class="navbar">
     <ul>
       <li><a href="index.html" class="active">KATALOG PRODUK</a></li>
@@ -35,12 +30,10 @@
     </ul>
   </nav>
 
-  <!-- KONTEN UTAMA & SIDEBAR -->
   <div class="container">
-    
-    <!-- SIDEBAR (Kategori & Jam Operasional) -->
+
     <aside class="sidebar">
-      <!-- Fitur pencarian cepat -->
+      
       <div class="widget search-box">
         <h3>CARI GEAR</h3>
         <input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Ketik nama alat...">
@@ -71,14 +64,11 @@
       </div>
     </aside>
 
-    <!-- MAIN CONTENT (Katalog Produk) -->
     <main class="main-content">
       <h2>Katalog Perlengkapan Outdoor</h2>
-      
-      <!-- GRID PRODUK -->
+
       <div class="product-grid" id="productGrid">
-        
-        <!-- Produk 1 -->
+
         <div class="product-card" data-category="tas" data-name="carrier eiger 60l">
           <img src="https://github.com/Bulee76/Web-UTS/blob/main/tas%20carrier.jpg?raw=true" alt="Carrier Eiger">
           <h3>Carrier Eiger 60L</h3>
@@ -86,7 +76,6 @@
           <a href="detail.html" class="btn-detail">Lihat Detail</a>
         </div>
 
-        <!-- Produk 2 -->
         <div class="product-card" data-category="tenda" data-name="tenda consina 4p">
           <img src="https://github.com/Bulee76/Web-UTS/blob/main/Tenda.jpg?raw=true" alt="Tenda Consina">
           <h3>Tenda Consina 4P</h3>
@@ -94,7 +83,6 @@
           <a href="detail.html" class="btn-detail">Lihat Detail</a>
         </div>
 
-        <!-- Produk 3 -->
         <div class="product-card" data-category="sepatu" data-name="sepatu rei tracker">
           <img src="https://github.com/Bulee76/Web-UTS/blob/main/sepatu%20Trekking.jpg?raw=true" alt="Sepatu Rei">
           <h3>Sepatu Rei Tracker</h3>
@@ -102,7 +90,6 @@
           <a href="detail.html" class="btn-detail">Lihat Detail</a>
         </div>
 
-        <!-- Produk 4 -->
         <div class="product-card" data-category="tenda" data-name="sleeping bag polar">
           <img src="https://github.com/Bulee76/Web-UTS/blob/main/SLEEPING-BAG-MUMMY-MALL-2.png?raw=true" alt="Sleeping Bag">
           <h3>Sleeping Bag Polar</h3>
@@ -110,7 +97,6 @@
           <a href="detail.html" class="btn-detail">Lihat Detail</a>
         </div>
 
-        <!-- Produk 5 -->
         <div class="product-card" data-category="masak" data-name="kompor portable">
           <img src="https://github.com/Bulee76/Web-UTS/blob/main/kompor%20portable.jpg?raw=true" alt="Kompor Portable">
           <h3>Kompor Portable</h3>
@@ -118,7 +104,6 @@
           <a href="detail.html" class="btn-detail">Lihat Detail</a>
         </div>
 
-        <!-- Produk 6 -->
         <div class="product-card" data-category="masak" data-name="nesting cooking set">
           <img src="https://github.com/Bulee76/Web-UTS/blob/main/nesting%20coocking%20set.jpeg?raw=true" alt="Nesting Cooking Set">
           <h3>Nesting Cooking Set</h3>
@@ -126,7 +111,6 @@
           <a href="detail.html" class="btn-detail">Lihat Detail</a>
         </div>
 
-        <!-- Produk 7 -->
         <div class="product-card" data-category="tenda" data-name="flysheet 3x4 meter">
           <img src="https://github.com/Bulee76/Web-UTS/blob/main/flysheet.jpg?raw=true" alt="Flysheet">
           <h3>Flysheet 3x4 Meter</h3>
@@ -134,7 +118,6 @@
           <a href="detail.html" class="btn-detail">Lihat Detail</a>
         </div>
 
-        <!-- Produk 8 -->
         <div class="product-card" data-category="masak" data-name="headlamp led">
           <img src="https://github.com/Bulee76/Web-UTS/blob/main/Headlamp%20LED.jpg?raw=true" alt="Headlamp LED">
           <h3>Headlamp LED</h3>
@@ -142,7 +125,6 @@
           <a href="detail.html" class="btn-detail">Lihat Detail</a>
         </div>
 
-        <!-- Produk 9 -->
         <div class="product-card" data-category="tenda" data-name="matras alumunium">
           <img src="https://github.com/Bulee76/Web-UTS/blob/main/matras%20alluminium.jpg?raw=true" alt="Matras Alumunium">
           <h3>Matras Alumunium</h3>
@@ -155,13 +137,11 @@
 
   </div>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <p><strong>Aditya Outdoor Gear © 2026 | NIM: 10525009</strong></p>
     <p class="dosen">Dosen: Syahrul Mauluddin, S.Kom, M.Kom - UNIKOM</p>
   </footer>
 
-  <!-- Menghubungkan ke file JavaScript external -->
   <script src="js/script.js"></script>
 </body>
 </html>
