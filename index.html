@@ -30,50 +30,38 @@
       <li><a href="kontak.html">KONTAK & BIODATA</a></li>
     </ul>
   </nav>
+<div class="container">
 
- <div class="container" style="display: flex; gap: 20px; align-items: flex-start;">
+    <aside class="sidebar">
+      <div class="widget search-box">
+        <h3>CARI GEAR</h3>
+        <input type="text" id="searchInput" onkeyup="searchProduct()" placeholder="Ketik nama alat...">
+      </div>
 
-  <aside class="sidebar-left" style="flex: 1; min-width: 200px;">
-    <div class="widget">
-      <h3>CARI GEAR</h3>
-      <input type="text" placeholder="Ketik nama alat..." style="width: 100%; padding: 8px; background: #222; color: #fff; border: 1px solid #444; border-radius: 4px;">
-    </div>
-    <div class="widget">
-      <h3>KATEGORI GEAR</h3>
-      <ul class="category-list">
-        <li><a href="#">🌲 Semua Produk</a></li>
-        <li><a href="#">🐻 Tenda Camping</a></li>
-        <li><a href="#">🎒 Tas Carrier</a></li>
-        <li><a href="#">🥾 Sepatu Gunung</a></li>
-        <li><a href="#">🍳 Alat Masak</a></li>
-      </ul>
-    </div>
-    <div class="widget">
-      <h3>JAM OPERASIONAL</h3>
-      <p>Setiap Hari:<br><strong>08.00 - 22.00 WIB</strong></p>
-    </div>
-  </aside>
+      <div class="widget">
+        <h3>KATEGORI GEAR</h3>
+        <ul class="category-list">
+          <li onclick="filterCategory('all')">🌲 Semua Produk</li>
+          <li onclick="filterCategory('tenda')">🐻 Tenda Camping</li>
+          <li onclick="filterCategory('tas')">🎒 Tas Carrier</li>
+          <li onclick="filterCategory('sepatu')">🥾 Sepatu Gunung</li>
+          <li onclick="filterCategory('masak')">🍳 Alat Masak</li>
+        </ul>
+      </div>
 
-  <main class="main-content" style="flex: 3;">
-    <h2>Katalog Perlengkapan Outdoor</h2>
-  </main>
+      <div class="widget">
+        <h3>JAM OPERASIONAL</h3>
+        <p>Setiap Hari:<br><strong>08.00 - 22.00 WIB</strong></p>
+      </div>
 
-  <aside class="sidebar-right" style="flex: 1; min-width: 200px;">
-    <div class="widget" style="background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid #2a2a2a; margin-bottom: 15px;">
-      <h3 style="color: #FFD700; margin-bottom: 10px; font-size: 1.1rem;">BANTUAN SEWA</h3>
-      <p style="font-size: 0.85rem; color: #ccc; line-height: 1.4;">Butuh rekomendasi alat pendakian?</p>
-      <a href="https://wa.me/628123456789" target="_blank" style="display: block; text-align: center; background: #25D366; color: #fff; padding: 8px; border-radius: 5px; text-decoration: none; margin-top: 10px; font-weight: bold; font-size: 0.85rem;">💬 Chat WhatsApp</a>
-    </div>
-
-    <div class="widget" style="background: #1a1a1a; padding: 15px; border-radius: 8px; border: 1px solid #2a2a2a;">
-      <h3 style="color: #FFD700; margin-bottom: 10px; font-size: 1.1rem;">SYARAT SEWA</h3>
-      <ul style="font-size: 0.8rem; color: #ccc; padding-left: 15px; line-height: 1.5;">
-        <li>Wajib meninggalkan e-KTP / SIM Asli</li>
-        <li>Hitungan sewa per 24 jam</li>
-        <li>Alat wajib kembali bersih</li>
-      </ul>
-    </div>
-  </aside>
+      <div class="widget">
+        <h3>SOSIAL MEDIA</h3>
+        <div class="social-links">
+          <a href="https://www.instagram.com/aditya_rasya.15" target="_blank">Instagram</a>
+          <a href="https://www.tiktok.com/@thisbulee" target="_blank">TikTok</a>
+        </div>
+      </div>
+    </aside>
 
 </div>
       <div class="product-grid" id="productGrid">
