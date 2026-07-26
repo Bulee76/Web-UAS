@@ -1,54 +1,80 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invoice Transaksi - Aditya Outdoor Gear</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Aditya Outdoor Gear - Invoice Transaksi</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
-<body style="background-color: #121212; color: #ffffff; font-family: sans-serif; margin: 0; padding: 0;">
+<body>
 
-  <header style="text-align: center; padding: 20px; background: #1a1a1a; border-bottom: 2px solid #FFD700;">
-    <h1 style="color: #FFD700; margin: 0; font-size: 2rem;">ADITYA OUTDOOR GEAR</h1>
-    <p style="color: #aaa; margin: 5px 0 0 0; font-style: italic;">"Explore the Wild, Prepare Your Best Gear"</p>
+  <header class="header">
+    <div class="logo">
+      <h1>ADITYA OUTDOOR GEAR</h1>
+      <p><i>"Explore the Wild, Prepare Your Best Gear"</i></p>
+    </div>
   </header>
 
-  <div style="background: #111; padding: 8px 0; border-bottom: 1px solid #222;">
+  <div style="background: #111; padding: 6px 0; border-bottom: 1px solid #222;">
     <marquee behavior="scroll" direction="left" scrollamount="6" style="color: #FFD700; font-size: 0.9rem; font-weight: bold;">
       🔥 PROMO SPECIAL SEWA ADITYA OUTDOOR GEAR: DISKON 10% UNTUK MAHASISWA UNIKOM! | BUKA SETIAP HARI 08.00 - 22.00 WIB 🔥
     </marquee>
   </div>
 
-  <nav class="navbar" style="background: #1a1a1a; padding: 10px; text-align: center; border-bottom: 1px solid #333;">
-    <a href="index.html" style="color: #fff; text-decoration: none; margin: 0 12px; font-weight: bold;">KATALOG PRODUK</a>
-    <a href="detail_gear1.html" style="color: #fff; text-decoration: none; margin: 0 12px; font-weight: bold;">DETAIL PRODUK</a>
-    <a href="transaksi.html" style="color: #fff; text-decoration: none; margin: 0 12px; font-weight: bold;">FORM TRANSAKSI</a>
-    <a href="invoice.html" style="color: #FFD700; text-decoration: none; margin: 0 12px; font-weight: bold;">INVOICE</a>
-    <a href="tentang.html" style="color: #fff; text-decoration: none; margin: 0 12px; font-weight: bold;">TENTANG TOKO</a>
-    <a href="kontak.html" style="color: #fff; text-decoration: none; margin: 0 12px; font-weight: bold;">KONTAK & BIODATA</a>
+  <nav class="navbar">
+    <ul>
+      <li><a href="index.html">KATALOG PRODUK</a></li>
+      <li><a href="detail_gear1.html">DETAIL PRODUK</a></li>
+      <li><a href="transaksi.html">FORM TRANSAKSI</a></li>
+      <li><a href="invoice.html" class="active">INVOICE</a></li>
+      <li><a href="tentang.html">TENTANG TOKO</a></li>
+      <li><a href="kontak.html">KONTAK & BIODATA</a></li>
+    </ul>
   </nav>
 
-  <main class="main-content" style="max-width: 650px; margin: 30px auto; background: #1a1a1a; padding: 25px; border-radius: 8px; border: 1px solid #333; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
-    
-    <div style="text-align: center; border-bottom: 2px dashed #444; padding-bottom: 15px; margin-bottom: 20px;">
-      <h2 style="color: #FFD700; margin: 0 0 5px 0;">ADITYA OUTDOOR GEAR</h2>
-      <p style="font-size: 0.85rem; color: #aaa; margin: 0;">Jl. Dipati Ukur No. 112, Coblong, Kota Bandung</p>
-      <h3 style="margin-top: 15px; color: #fff; letter-spacing: 1px;">INVOICE SEWA PERLENGKAPAN</h3>
-    </div>
+  <div class="container">
 
-    <div id="kontenInvoice">
-      <p style="text-align: center; color: #aaa;">Memuat data transaksi...</p>
-    </div>
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>LOKASI TOKO</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.988019777598!2d107.6131435!3d-6.8919835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e65756a81a23%3A0x8898f02931e21b27!2sUNIKOM!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="150" style="border:0; border-radius:5px;" allowfullscreen="" loading="lazy"></iframe>
+        <p style="font-size: 0.8rem; margin-top: 8px; color: #ccc;"><strong>Alamat Lengkap:</strong><br>Jl. Dipati Ukur No. 112, Coblong, Kota Bandung (Area Depan Kampus UNIKOM)</p>
+      </div>
 
-    <div style="text-align: center; margin-top: 30px; border-top: 1px solid #333; padding-top: 20px;">
-      <button onclick="window.print()" style="padding: 10px 20px; background: #2196F3; color: #fff; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-right: 10px;">🖨️ Cetak / Print Struk</button>
-      <a href="index.html" style="padding: 10px 20px; background: #444; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">🏠 Kembali ke Katalog</a>
-    </div>
+      <div class="widget">
+        <h3>JAM OPERASIONAL</h3>
+        <p>Setiap Hari:<br><strong>08.00 - 22.00 WIB</strong></p>
+      </div>
+    </aside>
 
-  </main>
+    <main class="main-content">
+      <h2>Invoice Bukti Transaksi</h2>
+      
+      <div style="background: #1a1a1a; padding: 25px; border-radius: 8px; border: 1px solid #333; color: #fff;">
+        
+        <div style="text-align: center; border-bottom: 2px dashed #444; padding-bottom: 15px; margin-bottom: 20px;">
+          <h3 style="color: #FFD700; margin: 0 0 5px 0; font-size: 1.5rem;">ADITYA OUTDOOR GEAR</h3>
+          <p style="font-size: 0.85rem; color: #aaa; margin: 0;">Jl. Dipati Ukur No. 112, Coblong, Kota Bandung</p>
+          <h4 style="margin-top: 15px; color: #fff; letter-spacing: 1px;">STRUK SEWA PERLENGKAPAN</h4>
+        </div>
 
-  <footer style="text-align: center; padding: 20px; background: #111; color: #888; margin-top: 40px; border-top: 1px solid #222; font-size: 0.85rem;">
-    <p style="margin: 0;">Aditya Outdoor Gear &copy; 2026 | NIM: 10525009</p>
-    <p style="margin: 5px 0 0 0; color: #666;">Dosen: Syahrul Mauluddin, S.Kom., M.Kom. - UNIKOM</p>
+        <div id="kontenInvoice">
+          <p style="text-align: center; color: #aaa;">Memuat data transaksi...</p>
+        </div>
+
+        <div style="text-align: center; margin-top: 25px; border-top: 1px solid #333; padding-top: 20px;">
+          <button onclick="window.print()" style="padding: 10px 20px; background: #2196F3; color: #fff; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-right: 10px;">🖨️ Cetak / Print Struk</button>
+          <a href="index.html" style="padding: 10px 20px; background: #444; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">🏠 Kembali ke Katalog</a>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <footer class="footer">
+    <p><strong>Aditya Outdoor Gear © 2026 | NIM: 10525009</strong></p>
+    <p class="dosen">Dosen: Syahrul Mauluddin, S.Kom, M.Kom - UNIKOM</p>
   </footer>
 
   <script>
@@ -59,7 +85,7 @@
       container.innerHTML = `
         <table style="width: 100%; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.8;">
           <tr><td style="width: 35%; color: #aaa;">No. Invoice</td><td>: <strong style="color: #FFD700;">${data.noInvoice}</strong></td></tr>
-          <tr><td style="color: #aaa;">Tanggal</td><td>: ${data.tgl}</td></tr>
+          <tr><td style="color: #aaa;">Tanggal Transaksi</td><td>: ${data.tgl}</td></tr>
           <tr><td style="color: #aaa;">Nama Penyewa</td><td>: <strong>${data.nama}</strong></td></tr>
           <tr><td style="color: #aaa;">No. WhatsApp</td><td>: ${data.hp}</td></tr>
           <tr><td style="color: #aaa;">Metode Pembayaran</td><td>: ${data.pembayaran}</td></tr>
@@ -91,7 +117,7 @@
       `;
     } else {
       container.innerHTML = `
-        <div style="text-align: center; padding: 30px 10px; background: #222; border-radius: 5px; border: 1px solid #333;">
+        <div style="text-align: center; padding: 25px 10px; background: #222; border-radius: 5px; border: 1px solid #333;">
           <p style="color: #ff5252; margin: 0 0 10px 0; font-weight: bold;">⚠️ Belum ada data transaksi yang diproses!</p>
           <p style="font-size: 0.85rem; color: #aaa; margin: 0 0 15px 0;">Silakan isi Form Transaksi terlebih dahulu untuk mencetak invoice.</p>
           <a href="transaksi.html" style="padding: 8px 15px; background: #2e7d32; color: #fff; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; display: inline-block;">Ke Form Transaksi</a>
