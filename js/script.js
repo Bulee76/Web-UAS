@@ -38,23 +38,26 @@ function hitungsTotal() {
 
 function handleOrder(event) {
     event.preventDefault();
+    
     const nama = document.getElementById('nama').value;
     const hp = document.getElementById('hp').value;
+
     const e = document.getElementById('produk');
+
     const namaProduk = e.options[e.selectedIndex].text;
+    
     const durasi = document.getElementById('durasi').value;
     const total = document.getElementById('totalHarga').innerText;
 
     const dataTransaksi = {
         nama: nama,
         hp: hp,
-        produk: namaProduk,
+        produk: namaProduk, 
         durasi: durasi,
         total: total,
         noInv: "INV/" + new Date().getFullYear() + "/" + Math.floor(1000 + Math.random() * 9000)
     };
 
     localStorage.setItem('lastTransaction', JSON.stringify(dataTransaksi));
-
     window.location.href = 'invoice.html';
 }
