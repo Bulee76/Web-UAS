@@ -2,85 +2,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice Pembayaran - Aditya Outdoor Gear</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Invoice Pembayaran - ADITYA OUTDOOR GEAR</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
-        .invoice-box {
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 30px;
-            border: 1px solid #eee;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
-            font-size: 16px;
-            line-height: 24px;
-            background: #fff;
-            color: #333;
-            border-radius: 8px;
+        * {
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
         }
 
-        .invoice-header {
+        body {
+            background-color: #121212;
+            color: #333;
+            padding: 20px;
+            margin: 0;
+        }
+
+        .invoice-box {
+            max-width: 700px;
+            margin: 30px auto;
+            padding: 30px;
+            border: 2px solid #eab308;
+            background: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+        }
+
+        .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #2e7d32;
-            padding-bottom: 20px;
+            border-bottom: 2px dashed #ccc;
+            padding-bottom: 15px;
             margin-bottom: 20px;
         }
 
-        .invoice-header h1 {
-            color: #2e7d32;
+        .header h1 {
             margin: 0;
-            font-size: 24px;
+            color: #15803d; 
+            font-size: 22px;
         }
 
-        .invoice-details {
-            display: flex;
-            justify-content: space-between;
+        .header p {
+            margin: 3px 0 0 0;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .inv-info {
+            text-align: right;
+            font-size: 13px;
+        }
+
+        .customer-details {
             margin-bottom: 20px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+
+        .customer-details strong {
+            color: #15803d;
         }
 
         .invoice-table {
             width: 100%;
-            line-height: inherit;
-            text-align: left;
             border-collapse: collapse;
             margin-bottom: 20px;
+            font-size: 14px;
         }
 
         .invoice-table th {
-            background: #2e7d32;
-            color: #fff;
+            background-color: #15803d;
+            color: white;
+            text-align: left;
             padding: 10px;
         }
 
         .invoice-table td {
             padding: 10px;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid #ddd;
         }
 
-        .total-row td {
+        .total-row {
             font-weight: bold;
-            border-top: 2px solid #333;
+            font-size: 16px;
+            background-color: #fef08a;
         }
 
-        .btn-print {
-            background-color: #2e7d32;
-            color: white;
+        .btn-group {
+            text-align: center;
+            margin-top: 25px;
+        }
+
+        .btn {
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 14px;
+            text-decoration: none;
+            display: inline-block;
+            margin: 5px;
+        }
+
+        .btn-print {
+            background-color: #15803d;
+            color: white;
+        }
+
+        .btn-back {
+            background-color: #475569;
+            color: white;
         }
 
         @media print {
-            .no-print {
-                display: none;
+            body {
+                background-color: white;
             }
             .invoice-box {
+                border: 1px solid #000;
                 box-shadow: none;
-                border: none;
+            }
+            .no-print {
+                display: none;
             }
         }
     </style>
@@ -88,75 +132,71 @@
 <body>
 
     <div class="invoice-box">
-        <div class="invoice-header">
+        <div class="header">
             <div>
                 <h1>ADITYA OUTDOOR GEAR</h1>
                 <p><i>"Explore the Wild, Prepare Your Best Gear"</i></p>
             </div>
-            <div style="text-align: right;">
-                <h3>INVOICE</h3>
-                <p id="invNo">No: INV/2026/001</p>
-                <p id="invDate">Tanggal: -</p>
+            <div class="inv-info">
+                <strong id="noInvoice">INV/2026/0000</strong><br>
+                <span id="tglInvoice">Tanggal: -</span>
             </div>
         </div>
 
-        <div class="invoice-details">
-            <div>
-                <strong>Diterbitkan Oleh:</strong><br>
-                Aditya Outdoor Gear<br>
-                Jl. Dipatiukur No. 112, Bandung<br>
-                CS: 0812-3456-7890
-            </div>
-            <div>
-                <strong>Ditujukan Kepada:</strong><br>
-                <span id="custNama">Nama Pembeli</span><br>
-                <span id="custTelp">No. Telp</span><br>
-                <span id="custAlamat">Alamat Lengkap</span>
-            </div>
+        <div class="customer-details">
+            <p><strong>DETAIL PENYEWA:</strong></p>
+            <p>Nama Pembeli : <span id="outNama">-</span></p>
+            <p>No. Handphone : <span id="outHp">-</span></p>
         </div>
 
         <table class="invoice-table">
             <thead>
                 <tr>
-                    <th>Item Produk</th>
-                    <th>Harga Satuan</th>
-                    <th>Jumlah (Qty)</th>
-                    <th>Subtotal</th>
+                    <th>Item Alat Outdoor</th>
+                    <th>Durasi (Hari)</th>
+                    <th>Total Bayar</th>
                 </tr>
             </thead>
-            <tbody id="invoiceItems">
+            <tbody>
                 <tr>
-                    <td>Tenda Dome Kapasitas 4 Orang</td>
-                    <td>Rp 450.000</td>
-                    <td>1</td>
-                    <td>Rp 450.000</td>
+                    <td id="outProduk">-</td>
+                    <td id="outDurasi">- Hari</td>
+                    <td id="outTotalText">Rp 0</td>
+                </tr>
+                <tr class="total-row">
+                    <td colspan="2" style="text-align: right;">GRAND TOTAL:</td>
+                    <td id="outTotalGrand">Rp 0</td>
                 </tr>
             </tbody>
-            <tfoot>
-                <tr class="total-row">
-                    <td colspan="3" style="text-align: right;">Total Bayar:</td>
-                    <td id="invTotal">Rp 450.000</td>
-                </tr>
-            </tfoot>
         </table>
 
-        <div class="no-print" style="text-align: center; margin-top: 30px;">
-            <button class="btn-print" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
-            <a href="transaksi.html" style="margin-left: 15px; text-decoration: none; color: #555;">Kembali ke Transaksi</a>
+        <p style="font-size: 12px; color: #666; text-align: center;">
+            * Harap tunjukkan nota/invoice ini saat pengambilan barang di basecamp.
+        </p>
+
+        <div class="btn-group no-print">
+            <button class="btn btn-print" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
+            <a href="index.html" class="btn btn-back">⬅ Kembali ke Toko</a>
         </div>
     </div>
-
     <script>
         document.addEventListener('DOMContentLoaded', () => {
-            const now = new Date();
-            const dateStr = now.toLocaleDateString('id-ID', { day: 'numeric', month: 'long', year: 'numeric' });
-            document.getElementById('invDate').innerText = "Tanggal: " + dateStr;
+            const hariIni = new Date();
+            const opsiTgl = { year: 'numeric', month: 'long', day: 'numeric' };
+            document.getElementById('tglInvoice').innerText = "Tanggal: " + hariIni.toLocaleDateString('id-ID', opsiTgl);
 
-            if (localStorage.getItem('lastTransaction')) {
-                const data = JSON.parse(localStorage.getItem('lastTransaction'));
-                document.getElementById('custNama').innerText = data.nama || "M. Aditya Rasya";
-                document.getElementById('custTelp').innerText = data.telp || "08123456789";
-                document.getElementById('custAlamat').innerText = data.alamat || "Bandung";
+            const dataSaved = localStorage.getItem('lastTransaction');
+
+            if (dataSaved) {
+                const data = JSON.parse(dataSaved);
+
+                document.getElementById('noInvoice').innerText = data.noInv || "INV/2026/001";
+                document.getElementById('outNama').innerText = data.nama || "-";
+                document.getElementById('outHp').innerText = data.hp || "-";
+                document.getElementById('outProduk').innerText = data.produk || "-";
+                document.getElementById('outDurasi').innerText = (data.durasi || 1) + " Hari";
+                document.getElementById('outTotalText').innerText = data.total || "Rp 0";
+                document.getElementById('outTotalGrand').innerText = data.total || "Rp 0";
             }
         });
     </script>
