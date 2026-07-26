@@ -78,6 +78,20 @@
         </div>
 
         <div style="margin-bottom: 15px;">
+          <label for="variasi" style="display: block; margin-bottom: 5px; font-weight: bold; color: #FFD700;">Variasi / Ukuran Produk:</label>
+           <select id="variasi" style="padding: 10px; width: 100%; border-radius: 4px; background: #222; color: #fff; border: 1px solid #444;">
+            <option value="Standar">Standar / Regular</option>
+            <option value="Size 39-41">Size Sepatu 39 - 41</option>
+            <option value="Size 42-44">Size Sepatu 42 - 44</option>
+            <option value="Kapasitas 4P">Kapasitas Tenda 4 Person</option>
+            <option value="Kapasitas 6P">Kapasitas Tenda 6 Person</option>
+            <option value="Ukuran 60L">Ukuran Carrier 60 Liter</option>
+            <option value="Ukuran 80L">Ukuran Carrier 80 Liter</option>
+            <option value="Ukuran 3x4m">Ukuran Flysheet 3x4m</option>
+        </select>
+        </div>
+
+        <div style="margin-bottom: 15px;">
           <label style="color: #FFD700; font-weight: bold; display: block; margin-bottom: 5px;">Lama Sewa (Hari):</label>
           <input type="number" id="lama" min="1" value="1" required onchange="hitungTotal()" onkeyup="hitungTotal()" style="width: 100%; padding: 10px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box;">
         </div>
@@ -136,19 +150,21 @@
       const pembayaran = document.getElementById('pembayaran').value;
       const total = harga * lama;
 
-      const dataTransaksi = {
-        noInvoice: 'INV/' + Math.floor(100000 + Math.random() * 900000),
-        tgl: new Date().toLocaleDateString('id-ID'),
-        nama: nama,
-        hp: hp,
-        produk: namaProduk,
-        harga: harga,
-        lama: lama,
-        pembayaran: pembayaran,
-        total: total
-      };
+const variasiPilihan = document.getElementById('variasi').value;
 
-      localStorage.setItem('transaksiUtlast', JSON.stringify(dataTransaksi));
+const dataTransaksi = {
+  noInvoice: 'INV/' + Math.floor(100000 + Math.random() * 900000),
+  nama: nama,
+  hp: hp,
+  produk: produkNama + " (" + variasiPilihan + ")", 
+  harga: harga,
+  lama: lama,
+  total: total,
+  pembayaran: pembayaran,
+  tgl: new Date().toLocaleDateString('id-ID')
+};
+
+localStorage.setItem('transaksiUtlast', JSON.stringify(dataTransaksi));
 
       window.location.href = 'invoice.html';
     }
