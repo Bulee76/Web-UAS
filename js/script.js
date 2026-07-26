@@ -37,15 +37,24 @@ function hitungsTotal() {
 }
 
 function handleOrder(event) {
-  event.preventDefault();
-  const nama = document.getElementById('nama').value;
-  const hp = document.getElementById('hp').value;
-  const e = document.getElementById('produk');
-  const namaProduk = e.options[e.selectedIndex].text;
-  const durasi = document.getElementById('durasi').value;
-  const total = document.getElementById('totalHarga').innerText;
+    event.preventDefault();
+    const nama = document.getElementById('nama').value;
+    const hp = document.getElementById('hp').value;
+    const e = document.getElementById('produk');
+    const namaProduk = e.options[e.selectedIndex].text;
+    const durasi = document.getElementById('durasi').value;
+    const total = document.getElementById('totalHarga').innerText;
 
-  const pesan = `Halo Aditya Outdoor Gear, saya ingin menyewa:%0A%0A- Nama: ${nama}%0A- No HP: ${hp}%0A- Alat: ${namaProduk}%0A- Durasi: ${durasi} Hari%0A- Total: ${total}`;
+    const dataTransaksi = {
+        nama: nama,
+        hp: hp,
+        produk: namaProduk,
+        durasi: durasi,
+        total: total,
+        noInv: "INV/" + new Date().getFullYear() + "/" + Math.floor(1000 + Math.random() * 9000)
+    };
 
-  window.open(`https://wa.me/6281234567890?text=${pesan}`, '_blank');
+    localStorage.setItem('lastTransaction', JSON.stringify(dataTransaksi));
+
+    window.location.href = 'invoice.html';
 }
