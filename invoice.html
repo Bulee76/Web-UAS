@@ -1,204 +1,104 @@
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Invoice Pembayaran - ADITYA OUTDOOR GEAR</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            box-sizing: border-box;
-            font-family: 'Poppins', sans-serif;
-        }
-
-        body {
-            background-color: #121212;
-            color: #333;
-            padding: 20px;
-            margin: 0;
-        }
-
-        .invoice-box {
-            max-width: 700px;
-            margin: 30px auto;
-            padding: 30px;
-            border: 2px solid #eab308;
-            background: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 5px 20px rgba(0,0,0,0.3);
-        }
-
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 2px dashed #ccc;
-            padding-bottom: 15px;
-            margin-bottom: 20px;
-        }
-
-        .header h1 {
-            margin: 0;
-            color: #15803d; 
-            font-size: 22px;
-        }
-
-        .header p {
-            margin: 3px 0 0 0;
-            font-size: 12px;
-            color: #666;
-        }
-
-        .inv-info {
-            text-align: right;
-            font-size: 13px;
-        }
-
-        .customer-details {
-            margin-bottom: 20px;
-            font-size: 14px;
-            line-height: 1.6;
-        }
-
-        .customer-details strong {
-            color: #15803d;
-        }
-
-        .invoice-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-            font-size: 14px;
-        }
-
-        .invoice-table th {
-            background-color: #15803d;
-            color: white;
-            text-align: left;
-            padding: 10px;
-        }
-
-        .invoice-table td {
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-
-        .total-row {
-            font-weight: bold;
-            font-size: 16px;
-            background-color: #fef08a;
-        }
-
-        .btn-group {
-            text-align: center;
-            margin-top: 25px;
-        }
-
-        .btn {
-            padding: 10px 20px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 14px;
-            text-decoration: none;
-            display: inline-block;
-            margin: 5px;
-        }
-
-        .btn-print {
-            background-color: #15803d;
-            color: white;
-        }
-
-        .btn-back {
-            background-color: #475569;
-            color: white;
-        }
-
-        @media print {
-            body {
-                background-color: white;
-            }
-            .invoice-box {
-                border: 1px solid #000;
-                box-shadow: none;
-            }
-            .no-print {
-                display: none;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invoice Transaksi - Aditya Outdoor Gear</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body style="background-color: #121212; color: #ffffff; font-family: sans-serif; margin: 0; padding: 0;">
 
-    <div class="invoice-box">
-        <div class="header">
-            <div>
-                <h1>ADITYA OUTDOOR GEAR</h1>
-                <p><i>"Explore the Wild, Prepare Your Best Gear"</i></p>
-            </div>
-            <div class="inv-info">
-                <strong id="noInvoice">INV/2026/0000</strong><br>
-                <span id="tglInvoice">Tanggal: -</span>
-            </div>
-        </div>
+  <header style="text-align: center; padding: 20px; background: #1a1a1a; border-bottom: 2px solid #FFD700;">
+    <h1 style="color: #FFD700; margin: 0; font-size: 2rem;">ADITYA OUTDOOR GEAR</h1>
+    <p style="color: #aaa; margin: 5px 0 0 0; font-style: italic;">"Explore the Wild, Prepare Your Best Gear"</p>
+  </header>
 
-        <div class="customer-details">
-            <p><strong>DETAIL PENYEWA:</strong></p>
-            <p>Nama Pembeli : <span id="outNama">-</span></p>
-            <p>No. Handphone : <span id="outHp">-</span></p>
-        </div>
+  <div style="background: #111; padding: 8px 0; border-bottom: 1px solid #222;">
+    <marquee behavior="scroll" direction="left" scrollamount="6" style="color: #FFD700; font-size: 0.9rem; font-weight: bold;">
+      🔥 PROMO SPECIAL SEWA ADITYA OUTDOOR GEAR: DISKON 10% UNTUK MAHASISWA UNIKOM! | BUKA SETIAP HARI 08.00 - 22.00 WIB 🔥
+    </marquee>
+  </div>
 
-        <table class="invoice-table">
-            <thead>
-                <tr>
-                    <th>Item Alat Outdoor</th>
-                    <th>Durasi (Hari)</th>
-                    <th>Total Bayar</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td id="outProduk">-</td>
-                    <td id="outDurasi">- Hari</td>
-                    <td id="outTotalText">Rp 0</td>
-                </tr>
-                <tr class="total-row">
-                    <td colspan="2" style="text-align: right;">GRAND TOTAL:</td>
-                    <td id="outTotalGrand">Rp 0</td>
-                </tr>
-            </tbody>
+  <nav class="navbar" style="background: #1a1a1a; padding: 10px; text-align: center; border-bottom: 1px solid #333;">
+    <a href="index.html" style="color: #fff; text-decoration: none; margin: 0 12px; font-weight: bold;">KATALOG PRODUK</a>
+    <a href="detail_gear1.html" style="color: #fff; text-decoration: none; margin: 0 12px; font-weight: bold;">DETAIL PRODUK</a>
+    <a href="transaksi.html" style="color: #fff; text-decoration: none; margin: 0 12px; font-weight: bold;">FORM TRANSAKSI</a>
+    <a href="invoice.html" style="color: #FFD700; text-decoration: none; margin: 0 12px; font-weight: bold;">INVOICE</a>
+    <a href="tentang.html" style="color: #fff; text-decoration: none; margin: 0 12px; font-weight: bold;">TENTANG TOKO</a>
+    <a href="kontak.html" style="color: #fff; text-decoration: none; margin: 0 12px; font-weight: bold;">KONTAK & BIODATA</a>
+  </nav>
+
+  <main class="main-content" style="max-width: 650px; margin: 30px auto; background: #1a1a1a; padding: 25px; border-radius: 8px; border: 1px solid #333; box-shadow: 0 4px 15px rgba(0,0,0,0.5);">
+    
+    <div style="text-align: center; border-bottom: 2px dashed #444; padding-bottom: 15px; margin-bottom: 20px;">
+      <h2 style="color: #FFD700; margin: 0 0 5px 0;">ADITYA OUTDOOR GEAR</h2>
+      <p style="font-size: 0.85rem; color: #aaa; margin: 0;">Jl. Dipati Ukur No. 112, Coblong, Kota Bandung</p>
+      <h3 style="margin-top: 15px; color: #fff; letter-spacing: 1px;">INVOICE SEWA PERLENGKAPAN</h3>
+    </div>
+
+    <div id="kontenInvoice">
+      <p style="text-align: center; color: #aaa;">Memuat data transaksi...</p>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; border-top: 1px solid #333; padding-top: 20px;">
+      <button onclick="window.print()" style="padding: 10px 20px; background: #2196F3; color: #fff; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-right: 10px;">🖨️ Cetak / Print Struk</button>
+      <a href="index.html" style="padding: 10px 20px; background: #444; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">🏠 Kembali ke Katalog</a>
+    </div>
+
+  </main>
+
+  <footer style="text-align: center; padding: 20px; background: #111; color: #888; margin-top: 40px; border-top: 1px solid #222; font-size: 0.85rem;">
+    <p style="margin: 0;">Aditya Outdoor Gear &copy; 2026 | NIM: 10525009</p>
+    <p style="margin: 5px 0 0 0; color: #666;">Dosen: Syahrul Mauluddin, S.Kom., M.Kom. - UNIKOM</p>
+  </footer>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem('transaksiUtlast'));
+    const container = document.getElementById('kontenInvoice');
+
+    if (data) {
+      container.innerHTML = `
+        <table style="width: 100%; font-size: 0.95rem; margin-bottom: 20px; line-height: 1.8;">
+          <tr><td style="width: 35%; color: #aaa;">No. Invoice</td><td>: <strong style="color: #FFD700;">${data.noInvoice}</strong></td></tr>
+          <tr><td style="color: #aaa;">Tanggal</td><td>: ${data.tgl}</td></tr>
+          <tr><td style="color: #aaa;">Nama Penyewa</td><td>: <strong>${data.nama}</strong></td></tr>
+          <tr><td style="color: #aaa;">No. WhatsApp</td><td>: ${data.hp}</td></tr>
+          <tr><td style="color: #aaa;">Metode Pembayaran</td><td>: ${data.pembayaran}</td></tr>
         </table>
 
-        <p style="font-size: 12px; color: #666; text-align: center;">
-            * Harap tunjukkan nota/invoice ini saat pengambilan barang di basecamp.
-        </p>
+        <table style="width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.9rem;">
+          <thead>
+            <tr style="background: #2a2a2a; color: #FFD700; text-align: left;">
+              <th style="padding: 10px; border: 1px solid #444;">Produk Alat</th>
+              <th style="padding: 10px; border: 1px solid #444; text-align: center;">Durasi</th>
+              <th style="padding: 10px; border: 1px solid #444; text-align: right;">Harga/Hari</th>
+              <th style="padding: 10px; border: 1px solid #444; text-align: right;">Subtotal</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td style="padding: 10px; border: 1px solid #444;">${data.produk}</td>
+              <td style="padding: 10px; border: 1px solid #444; text-align: center;">${data.lama} Hari</td>
+              <td style="padding: 10px; border: 1px solid #444; text-align: right;">Rp ${parseInt(data.harga).toLocaleString('id-ID')}</td>
+              <td style="padding: 10px; border: 1px solid #444; text-align: right;">Rp ${parseInt(data.total).toLocaleString('id-ID')}</td>
+            </tr>
+          </tbody>
+        </table>
 
-        <div class="btn-group no-print">
-            <button class="btn btn-print" onclick="window.print()">🖨️ Cetak / Simpan PDF</button>
-            <a href="index.html" class="btn btn-back">⬅ Kembali ke Toko</a>
+        <div style="background: #222; padding: 15px; border-radius: 5px; text-align: right; border: 1px solid #333;">
+          <span style="font-size: 0.9rem; color: #aaa; display: block; margin-bottom: 3px;">TOTAL YANG HARUS DIBAYAR:</span>
+          <span style="font-size: 1.4rem; font-weight: bold; color: #FFD700;">Rp ${parseInt(data.total).toLocaleString('id-ID')}</span>
         </div>
-    </div>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hariIni = new Date();
-            const opsiTgl = { year: 'numeric', month: 'long', day: 'numeric' };
-            document.getElementById('tglInvoice').innerText = "Tanggal: " + hariIni.toLocaleDateString('id-ID', opsiTgl);
+      `;
+    } else {
+      container.innerHTML = `
+        <div style="text-align: center; padding: 30px 10px; background: #222; border-radius: 5px; border: 1px solid #333;">
+          <p style="color: #ff5252; margin: 0 0 10px 0; font-weight: bold;">⚠️ Belum ada data transaksi yang diproses!</p>
+          <p style="font-size: 0.85rem; color: #aaa; margin: 0 0 15px 0;">Silakan isi Form Transaksi terlebih dahulu untuk mencetak invoice.</p>
+          <a href="transaksi.html" style="padding: 8px 15px; background: #2e7d32; color: #fff; text-decoration: none; border-radius: 4px; font-weight: bold; font-size: 0.85rem; display: inline-block;">Ke Form Transaksi</a>
+        </div>
+      `;
+    }
+  </script>
 
-            const dataSaved = localStorage.getItem('lastTransaction');
-
-            if (dataSaved) {
-                const data = JSON.parse(dataSaved);
-
-                document.getElementById('noInvoice').innerText = data.noInv || "INV/2026/001";
-                document.getElementById('outNama').innerText = data.nama || "-";
-                document.getElementById('outHp').innerText = data.hp || "-";
-                document.getElementById('outProduk').innerText = data.produk || "-";
-                document.getElementById('outDurasi').innerText = (data.durasi || 1) + " Hari";
-                document.getElementById('outTotalText').innerText = data.total || "Rp 0";
-                document.getElementById('outTotalGrand').innerText = data.total || "Rp 0";
-            }
-        });
-    </script>
 </body>
 </html>
