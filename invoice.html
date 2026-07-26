@@ -95,7 +95,7 @@
   <nav class="navbar">
     <ul>
       <li><a href="index.html">KATALOG PRODUK</a></li>
-      <li><a href="detail_gear1.html">DETAIL PRODUK</a></li>
+      <li><a href="detail.html">DETAIL PRODUK</a></li>
       <li><a href="transaksi.html">FORM TRANSAKSI</a></li>
       <li><a href="invoice.html" class="active">INVOICE</a></li>
       <li><a href="tentang.html">TENTANG TOKO</a></li>
@@ -120,8 +120,7 @@
 
     <main class="main-content">
       <h2 class="no-print">Invoice Bukti Transaksi</h2>
-      
-      <!-- KOTAK INVOICE YANG AKAN DICETAK -->
+
       <div class="invoice-card" style="background: #1a1a1a; padding: 25px; border-radius: 8px; border: 1px solid #333; color: #fff;">
         
         <div style="text-align: center; border-bottom: 2px dashed #444; padding-bottom: 15px; margin-bottom: 20px;">
@@ -130,12 +129,10 @@
           <h4 style="margin-top: 15px; color: #fff; letter-spacing: 1px;">STRUK SEWA PERLENGKAPAN</h4>
         </div>
 
-        <!-- Container tempat data transaksi muncul otomatis -->
         <div id="kontenInvoice">
           <p style="text-align: center; color: #aaa;">Memuat data transaksi...</p>
         </div>
 
-        <!-- Tombol Aksi (Diberi class no-print agar sembunyi pas dicetak) -->
         <div class="no-print" style="text-align: center; margin-top: 25px; border-top: 1px solid #333; padding-top: 20px;">
           <button onclick="window.print()" style="padding: 10px 20px; background: #2196F3; color: #fff; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-right: 10px;">🖨️ Cetak / Print Struk</button>
           <a href="index.html" style="padding: 10px 20px; background: #444; color: #fff; text-decoration: none; border-radius: 5px; font-weight: bold; display: inline-block;">🏠 Kembali ke Katalog</a>
@@ -146,13 +143,11 @@
 
   </div>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <p><strong>Aditya Outdoor Gear © 2026 | NIM: 10525009</strong></p>
     <p class="dosen">Dosen: Syahrul Mauluddin, S.Kom, M.Kom - UNIKOM</p>
   </footer>
 
-  <!-- JAVASCRIPT BACA DATA -->
   <script>
     const data = JSON.parse(localStorage.getItem('transaksiUtlast'));
     const container = document.getElementById('kontenInvoice');
