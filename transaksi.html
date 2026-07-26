@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="UTF-8">
@@ -7,6 +8,7 @@
 </head>
 <body>
 
+  <!-- HEADER -->
   <header class="header">
     <div class="logo">
       <h1>ADITYA OUTDOOR GEAR</h1>
@@ -14,16 +16,18 @@
     </div>
   </header>
 
-  <div style="background: #111; padding: 8px 0; border-top: 1px solid #222; border-bottom: 1px solid #222; margin-bottom: 15px;">
-  <marquee behavior="scroll" direction="left" scrollamount="6" style="color: #FFD700; font-size: 0.95rem; font-weight: bold; font-family: sans-serif;">
-    🔥 PROMO SPECIAL SEWA ADITYA OUTDOOR GEAR: DISKON 10% UNTUK MAHASISWA UNIKOM! | BUKA SETIAP HARI 08.00 - 22.00 WIB | LOKASI: JL. DIPATI UKUR NO. 112 BANDUNG 🔥
-  </marquee>
-</div>
+  <!-- MARQUEE -->
+  <div style="background: #111; padding: 6px 0; border-bottom: 1px solid #222;">
+    <marquee behavior="scroll" direction="left" scrollamount="6" style="color: #FFD700; font-size: 0.9rem; font-weight: bold;">
+      🔥 PROMO SPECIAL SEWA ADITYA OUTDOOR GEAR: DISKON 10% UNTUK MAHASISWA UNIKOM! | BUKA SETIAP HARI 08.00 - 22.00 WIB 🔥
+    </marquee>
+  </div>
 
+  <!-- NAVBAR -->
   <nav class="navbar">
     <ul>
       <li><a href="index.html">KATALOG PRODUK</a></li>
-      <li><a href="detail.html">DETAIL PRODUK</a></li>
+      <li><a href="detail_gear1.html">DETAIL PRODUK</a></li>
       <li><a href="transaksi.html" class="active">FORM TRANSAKSI</a></li>
       <li><a href="invoice.html">INVOICE</a></li>
       <li><a href="tentang.html">TENTANG TOKO</a></li>
@@ -31,127 +35,136 @@
     </ul>
   </nav>
 
+  <!-- CONTAINER UTAMA -->
   <div class="container">
+    
+    <!-- SIDEBAR LEFT -->
+    <aside class="sidebar">
+      <div class="widget">
+        <h3>LOKASI TOKO</h3>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.988019777598!2d107.6131435!3d-6.8919835!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e65756a81a23%3A0x8898f02931e21b27!2sUNIKOM!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" width="100%" height="150" style="border:0; border-radius:5px;" allowfullscreen="" loading="lazy"></iframe>
+        <p style="font-size: 0.8rem; margin-top: 8px; color: #ccc;">[Area Depan Kampus UNIKOM]<br>Jl. Dipati Ukur No. 112, Coblong, Kota Bandung</p>
+      </div>
 
- <div class="widget">
-  <h3>LOKASI TOKO</h3>
-  <div style="width: 100%; border-radius: 6px; overflow: hidden; margin-bottom: 10px; border: 1px solid #FFD700;">
-    <iframe 
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3961.026880016664!2d107.61280387499616!3d-6.887383993111622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e657375a0e35%3A0x6291a27e7f22f4b5!2sUniversitas%20Komputer%20Indonesia%20(UNIKOM)!5e0!3m2!1sid!2sid!4v1700000000000!5m2!1sid!2sid" 
-      width="100%" 
-      height="180" 
-      style="border:0;" 
-      allowfullscreen="" 
-      loading="lazy" 
-      referrerpolicy="no-referrer-when-downgrade">
-    </iframe>
-  </div>
-  <p style="font-size: 0.8rem; color: #ccc;">
-    <strong>Alamat Lengkap:</strong><br>
-    Jl. Dipati Ukur No. 112, Coblong, Kota Bandung (Area Depan Kampus UNIKOM)
-  </p>
-</div>
+      <div class="widget">
+        <h3>JAM OPERASIONAL</h3>
+        <p>Setiap Hari:<br><strong>08.00 - 22.00 WIB</strong></p>
+      </div>
+    </aside>
 
+    <!-- MAIN CONTENT FORM -->
     <main class="main-content">
-      <h2>Formulir Penyewaan Alat</h2>
-      
-      <div class="form-container" style="background-color: #1a1a1a; padding: 25px; border-radius: 8px; border: 1px solid #2a2a2a;">
-        <form id="rentForm" onsubmit="handleOrder(event)">
-          
-          <form id="formTransaksi" onsubmit="simpanTransaksi(event)">
-  <div style="margin-bottom: 15px;">
-    <label style="color: #FFD700; font-weight: bold; display: block; margin-bottom: 5px;">Nama Lengkap Penyewa:</label>
-    <input type="text" id="nama" required placeholder="Masukkan nama Anda..." style="width: 100%; padding: 10px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box;">
+      <h2 style="color: #FFD700; margin-bottom: 20px;">Formulir Penyewaan Alat</h2>
+
+      <form id="formTransaksi" onsubmit="simpanTransaksi(event)" style="background: #1a1a1a; padding: 25px; border-radius: 8px; border: 1px solid #333;">
+        
+        <div style="margin-bottom: 15px;">
+          <label style="color: #FFD700; font-weight: bold; display: block; margin-bottom: 5px;">Nama Lengkap Penyewa:</label>
+          <input type="text" id="nama" required placeholder="Masukkan nama Anda..." style="width: 100%; padding: 10px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label style="color: #FFD700; font-weight: bold; display: block; margin-bottom: 5px;">Nomor WhatsApp:</label>
+          <input type="tel" id="hp" required placeholder="08xxxxxxxxxx" style="width: 100%; padding: 10px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label style="color: #FFD700; font-weight: bold; display: block; margin-bottom: 5px;">Pilih Alat Outdoor:</label>
+          <select id="produk" required onchange="hitungTotal()" style="width: 100%; padding: 10px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box;">
+            <option value="" disabled selected>-- Pilih Alat Outdoor --</option>
+            <option value="50000" data-nama="Carrier Eiger / Arei 60L">Carrier Eiger / Arei 60L - Rp 50.000/hari</option>
+            <option value="20000" data-nama="Kompor Mawar Mini Portable">Kompor Mawar Mini Portable - Rp 20.000/hari</option>
+            <option value="35000" data-nama="Sepatu Rei Trekker High Cut">Sepatu Rei Trekker High Cut - Rp 35.000/hari</option>
+            <option value="60000" data-nama="Tenda Dome Double Layer 4P">Tenda Dome Double Layer 4P - Rp 60.000/hari</option>
+            <option value="15000" data-nama="Sleeping Bag Polar Bulu">Sleeping Bag Polar Bulu - Rp 15.000/hari</option>
+            <option value="20000" data-nama="Cooking Set / Nesting SY-300">Cooking Set / Nesting SY-300 - Rp 20.000/hari</option>
+            <option value="10000" data-nama="Flysheet 3x4 Meter Waterproof">Flysheet 3x4 Meter Waterproof - Rp 10.000/hari</option>
+            <option value="10000" data-nama="Headlamp LED Cree Sensor">Headlamp LED Cree Sensor - Rp 10.000/hari</option>
+            <option value="8000" data-nama="Matras Aluminium Foil Double">Matras Aluminium Foil Double - Rp 8.000/hari</option>
+          </select>
+        </div>
+
+        <div style="margin-bottom: 15px;">
+          <label style="color: #FFD700; font-weight: bold; display: block; margin-bottom: 5px;">Lama Sewa (Hari):</label>
+          <input type="number" id="lama" min="1" value="1" required onchange="hitungTotal()" onkeyup="hitungTotal()" style="width: 100%; padding: 10px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box;">
+        </div>
+
+        <div style="margin-bottom: 20px;">
+          <label style="color: #FFD700; font-weight: bold; display: block; margin-bottom: 5px;">Metode Pembayaran:</label>
+          <select id="pembayaran" required style="width: 100%; padding: 10px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box;">
+            <option value="Transfer Bank (BCA / Mandiri)">Transfer Bank (BCA / Mandiri)</option>
+            <option value="QRIS / E-Wallet (Gopay/OVO/Dana)">QRIS / E-Wallet (Gopay/OVO/Dana)</option>
+            <option value="Bayar di Toko (Cash/COD)">Bayar di Toko (Cash/COD)</option>
+          </select>
+        </div>
+
+        <div style="background: #111; padding: 15px; border-radius: 5px; text-align: center; margin-bottom: 20px; border: 1px solid #333;">
+          <p style="color: #aaa; margin: 0 0 5px 0; font-size: 0.9rem;">Estimasi Total Biaya:</p>
+          <h3 id="displayTotal" style="color: #FFD700; font-size: 1.8rem; margin: 0;">Rp 0</h3>
+        </div>
+
+        <!-- TOMBOL DIPASTIKAN TYPE SUBMIT AGAR MEMICU ONSUBMIT FORM -->
+        <button type="submit" style="width: 100%; padding: 14px; background: #2e7d32; color: #fff; font-weight: bold; font-size: 1rem; border: none; border-radius: 5px; cursor: pointer;">📄 PROSES & CETAK INVOICE</button>
+
+      </form>
+    </main>
+
   </div>
 
-  <div style="margin-bottom: 15px;">
-    <label style="color: #FFD700; font-weight: bold; display: block; margin-bottom: 5px;">Nomor WhatsApp:</label>
-    <input type="tel" id="hp" required placeholder="08xxxxxxxxxx" style="width: 100%; padding: 10px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box;">
-  </div>
-
-  <div style="margin-bottom: 15px;">
-    <label style="color: #FFD700; font-weight: bold; display: block; margin-bottom: 5px;">Pilih Alat Outdoor:</label>
-    <select id="produk" required onchange="hitungTotal()" style="width: 100%; padding: 10px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box;">
-      <option value="" disabled selected>-- Pilih Alat Outdoor --</option>
-      <option value="50000" data-nama="Carrier Eiger / Arei 60L">Carrier Eiger / Arei 60L - Rp 50.000/hari</option>
-      <option value="20000" data-nama="Kompor Mawar Mini Portable">Kompor Mawar Mini Portable - Rp 20.000/hari</option>
-      <option value="35000" data-nama="Sepatu Rei Trekker High Cut">Sepatu Rei Trekker High Cut - Rp 35.000/hari</option>
-      <option value="60000" data-nama="Tenda Dome Double Layer 4P">Tenda Dome Double Layer 4P - Rp 60.000/hari</option>
-      <option value="15000" data-nama="Sleeping Bag Polar Bulu">Sleeping Bag Polar Bulu - Rp 15.000/hari</option>
-      <option value="20000" data-nama="Cooking Set / Nesting SY-300">Cooking Set / Nesting SY-300 - Rp 20.000/hari</option>
-      <option value="10000" data-nama="Flysheet 3x4 Meter Waterproof">Flysheet 3x4 Meter Waterproof - Rp 10.000/hari</option>
-      <option value="10000" data-nama="Headlamp LED Cree Sensor">Headlamp LED Cree Sensor - Rp 10.000/hari</option>
-      <option value="8000" data-nama="Matras Aluminium Foil Double">Matras Aluminium Foil Double - Rp 8.000/hari</option>
-    </select>
-  </div>
-
-  <div style="margin-bottom: 15px;">
-    <label style="color: #FFD700; font-weight: bold; display: block; margin-bottom: 5px;">Lama Sewa (Hari):</label>
-    <input type="number" id="lama" min="1" value="1" required onchange="hitungTotal()" onkeyup="hitungTotal()" style="width: 100%; padding: 10px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box;">
-  </div>
-
-  <div style="margin-bottom: 20px;">
-    <label style="color: #FFD700; font-weight: bold; display: block; margin-bottom: 5px;">Metode Pembayaran:</label>
-    <select id="pembayaran" required style="width: 100%; padding: 10px; background: #2a2a2a; color: #fff; border: 1px solid #444; border-radius: 5px; box-sizing: border-box;">
-      <option value="Transfer Bank (BCA / Mandiri)">Transfer Bank (BCA / Mandiri)</option>
-      <option value="QRIS / E-Wallet (Gopay/OVO/Dana)">QRIS / E-Wallet (Gopay/OVO/Dana)</option>
-      <option value="Bayar di Toko (Cash/COD)">Bayar di Toko (Cash/COD)</option>
-    </select>
-  </div>
-
-  <div style="background: #111; padding: 15px; border-radius: 5px; text-align: center; margin-bottom: 20px; border: 1px solid #333;">
-    <p style="color: #aaa; margin-bottom: 5px; font-size: 0.9rem;">Estimasi Total Biaya:</p>
-    <h3 id="displayTotal" style="color: #FFD700; font-size: 1.8rem; margin: 0;">Rp 0</h3>
-  </div>
-
-  <button type="submit" style="width: 100%; padding: 12px; background: #2e7d32; color: #fff; font-weight: bold; font-size: 1rem; border: none; border-radius: 5px; cursor: pointer;">📄 PROSES & CETAK INVOICE</button>
-</form>
-
-<script>
-  function hitungTotal() {
-    const produkSelect = document.getElementById('produk');
-    const harga = parseInt(produkSelect.value) || 0;
-    const lama = parseInt(document.getElementById('lama').value) || 1;
-    const total = harga * lama;
-    
-    document.getElementById('displayTotal').innerText = 'Rp ' + total.toLocaleString('id-ID');
-  }
-
-  function simpanTransaksi(event) {
-    event.preventDefault();
-    
-    const nama = document.getElementById('nama').value;
-    const hp = document.getElementById('hp').value;
-    const produkSelect = document.getElementById('produk');
-    const namaProduk = produkSelect.options[produkSelect.selectedIndex].getAttribute('data-nama');
-    const harga = parseInt(produkSelect.value);
-    const lama = document.getElementById('lama').value;
-    const pembayaran = document.getElementById('pembayaran').value;
-    const total = harga * lama;
-
-    const dataTransaksi = {
-      noInvoice: 'INV/' + Math.floor(100000 + Math.random() * 900000),
-      tgl: new Date().toLocaleDateString('id-ID'),
-      nama: nama,
-      hp: hp,
-      produk: namaProduk,
-      harga: harga,
-      lama: lama,
-      pembayaran: pembayaran,
-      total: total
-    };
-
-    localStorage.setItem('transaksiUtlast', JSON.stringify(dataTransaksi));
-
-    window.location.href = 'invoice.html';
-  }
-</script>
-
+  <!-- FOOTER -->
   <footer class="footer">
     <p><strong>Aditya Outdoor Gear © 2026 | NIM: 10525009</strong></p>
     <p class="dosen">Dosen: Syahrul Mauluddin, S.Kom, M.Kom - UNIKOM</p>
   </footer>
 
-  <script src="js/script.js"></script>
+  <!-- SCRIPT JAVASCRIPT SIMPAN & PINDAH HALAMAN -->
+  <script>
+    function hitungTotal() {
+      const produkSelect = document.getElementById('produk');
+      const harga = parseInt(produkSelect.value) || 0;
+      const lama = parseInt(document.getElementById('lama').value) || 1;
+      const total = harga * lama;
+      
+      document.getElementById('displayTotal').innerText = 'Rp ' + total.toLocaleString('id-ID');
+    }
+
+    function simpanTransaksi(event) {
+      event.preventDefault(); // Mencegah form reload bawaan browser
+      
+      const nama = document.getElementById('nama').value;
+      const hp = document.getElementById('hp').value;
+      const produkSelect = document.getElementById('produk');
+      
+      if (!produkSelect.value) {
+        alert('Silakan pilih alat outdoor terlebih dahulu!');
+        return;
+      }
+
+      const namaProduk = produkSelect.options[produkSelect.selectedIndex].getAttribute('data-nama');
+      const harga = parseInt(produkSelect.value);
+      const lama = document.getElementById('lama').value;
+      const pembayaran = document.getElementById('pembayaran').value;
+      const total = harga * lama;
+
+      // Simpan data ke browser (localStorage)
+      const dataTransaksi = {
+        noInvoice: 'INV/' + Math.floor(100000 + Math.random() * 900000),
+        tgl: new Date().toLocaleDateString('id-ID'),
+        nama: nama,
+        hp: hp,
+        produk: namaProduk,
+        harga: harga,
+        lama: lama,
+        pembayaran: pembayaran,
+        total: total
+      };
+
+      localStorage.setItem('transaksiUtlast', JSON.stringify(dataTransaksi));
+      
+      // Pindah otomatis ke invoice.html
+      window.location.href = 'invoice.html';
+    }
+  </script>
+
 </body>
 </html>
